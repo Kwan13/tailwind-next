@@ -1,8 +1,9 @@
 'use client';
 
-import * as Tabs from '@radix-ui/react-tabs';
-import { TabItem } from './TabItem';
 import { useState } from 'react';
+import * as Tabs from '@radix-ui/react-tabs';
+
+import { TabItem } from './TabItem';
 
 export function SettingsTabs() {
   const [currentTab, setCurrenttab] = useState('tab1');
