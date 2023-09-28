@@ -3,7 +3,7 @@
 import { ChangeEvent, ComponentProps } from 'react';
 import { useFileInput } from './Root';
 
-interface ControlProps extends ComponentProps<'input'> {}
+export type ControlProps = ComponentProps<'input'>;
 
 export function Control({ multiple = false, ...props }: ControlProps) {
   const { id, onFilesSelected } = useFileInput();

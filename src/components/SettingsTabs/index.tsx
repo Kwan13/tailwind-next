@@ -1,15 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
-
 import { TabItem } from './TabItem';
+import { useState } from 'react';
 
 export function SettingsTabs() {
-  const [currentTab, setCurrenttab] = useState('tab1');
+  const [currentTab, setCurrentTab] = useState('tab1');
 
   return (
-    <Tabs.Root value={currentTab} onValueChange={setCurrenttab}>
+    <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
       <Tabs.List className="mt-6 flex w-full items-center gap-4 border-b border-zinc-200">
         <TabItem
           value="tab1"

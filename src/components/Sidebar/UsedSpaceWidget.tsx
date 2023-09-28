@@ -14,7 +14,7 @@ export function UsedSpaceWidget() {
         <div className="h-2 w-4/5 rounded-full bg-violet-600" />
       </div>
 
-      <div className="space-x-2">
+      <div className="space-x-3">
         <button
           type="button"
           className="text-sm font-medium text-violet-500 hover:text-violet-700"
@@ -23,7 +23,7 @@ export function UsedSpaceWidget() {
         </button>
         <button
           type="button"
-          className="text-sm font-medium text-violet-700 hover:text-violet-800"
+          className="text-sm font-medium text-violet-700 hover:text-violet-900"
         >
           Upgrade plan
         </button>

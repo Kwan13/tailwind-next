@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-interface TextareaProps extends ComponentProps<'textarea'> {}
+export type TextareaProps = ComponentProps<'textarea'>;
 
 export function Textarea(props: TextareaProps) {
   return (

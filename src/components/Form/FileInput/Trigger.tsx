@@ -1,7 +1,6 @@
 'use client';
 
 import { UploadCloud } from 'lucide-react';
-
 import { useFileInput } from './Root';
 
 export function Trigger() {
@@ -15,6 +14,7 @@ export function Trigger() {
       <div className="rounded-full border-6 border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100">
         <UploadCloud className="h-5 w-5 text-zinc-600 group-hover:text-violet-600" />
       </div>
+
       <div className="flex flex-col items-center gap-1">
         <span className="text-sm">
           <span className="font-semibold text-violet-700">Click to upload</span>{' '}

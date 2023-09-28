@@ -1,6 +1,5 @@
 'use client';
 
-import { Files } from 'lucide-react';
 import {
   ComponentProps,
   createContext,

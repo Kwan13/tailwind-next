@@ -1,8 +1,7 @@
 'use client';
 
-import { useAutoAnimate } from '@formkit/auto-animate/react';
-
 import { useFileInput } from './Root';
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { FileItem } from './FileItem';
 
 export function FileList() {
@@ -11,14 +10,16 @@ export function FileList() {
 
   return (
     <div ref={parent} className="mt-4 space-y-3">
-      {files.map(file => (
-        <FileItem
-          key={file.name}
-          name={file.name}
-          size={file.size}
-          state="error"
-        />
-      ))}
+      {files.map(file => {
+        return (
+          <FileItem
+            key={file.name}
+            name={file.name}
+            size={file.size}
+            state="error"
+          />
+        );
+      })}
     </div>
   );
 }

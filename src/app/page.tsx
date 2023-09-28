@@ -1,8 +1,7 @@
-import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react';
-
 import { SettingsTabs } from '@/components/SettingsTabs';
-import { InputRoot, InputPrefix, InputControl } from '@/components/Input';
+import * as Input from '@/components/Input';
 import * as FileInput from '@/components/Form/FileInput';
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react';
 import { Select } from '@/components/Form/Select';
 import { SelectItem } from '@/components/Form/Select/SelectItem';
 import { Textarea } from '@/components/Form/Textarea';
@@ -11,7 +10,7 @@ import { Button } from '@/components/Button';
 export default function Home() {
   return (
     <>
-      <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
+      <h1 className="to-zinc-900 text-3xl font-medium">Settings</h1>
 
       <SettingsTabs />
 
@@ -27,7 +26,9 @@ export default function Home() {
             <Button variant="outline" type="button">
               Cancel
             </Button>
-            <Button type="submit">Save</Button>
+            <Button variant="primary" type="submit" form="settings">
+              Save
+            </Button>
           </div>
         </div>
 
@@ -43,13 +44,13 @@ export default function Home() {
               Name
             </label>
             <div className="grid grid-cols-2 gap-6">
-              <InputRoot>
-                <InputControl id="firstName" defaultValue="Kawan" />
-              </InputRoot>
+              <Input.Root>
+                <Input.Control id="firstName" defaultValue="Diego" />
+              </Input.Root>
 
-              <InputRoot>
-                <InputControl defaultValue="José" />
-              </InputRoot>
+              <Input.Root>
+                <Input.Control defaultValue="Fernandes" />
+              </Input.Root>
             </div>
           </div>
 
@@ -60,16 +61,16 @@ export default function Home() {
             >
               Email address
             </label>
-            <InputRoot>
-              <InputPrefix>
+            <Input.Root>
+              <Input.Prefix>
                 <Mail className="h-5 w-5 text-zinc-500" />
-              </InputPrefix>
-              <InputControl
+              </Input.Prefix>
+              <Input.Control
                 id="email"
                 type="email"
-                defaultValue="kawan@gmail.com"
+                defaultValue="diego@rocketseat.com.br"
               />
-            </InputRoot>
+            </Input.Root>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
@@ -79,10 +80,9 @@ export default function Home() {
             >
               Your photo
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
-                This will br displayed on your profile.
+                This will be displayed on your profile.
               </span>
             </label>
-
             <FileInput.Root className="flex items-start gap-5">
               <FileInput.ImagePreview />
               <FileInput.Trigger />
@@ -94,9 +94,9 @@ export default function Home() {
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
-            <InputRoot>
-              <InputControl id="role" defaultValue="CTO" />
-            </InputRoot>
+            <Input.Root>
+              <Input.Control id="role" defaultValue="CTO" />
+            </Input.Root>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
@@ -140,26 +140,26 @@ export default function Home() {
                 <Select placeholder="" defaultValue="normal">
                   <SelectItem
                     value="normal"
-                    text="Normal Text"
                     defaultChecked
+                    text="Normal Text"
                   />
                   <SelectItem value="md" text="Markdown" />
                 </Select>
 
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" type="button">
+                  <Button type="button" variant="ghost">
                     <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
                   </Button>
-                  <Button variant="ghost" type="button">
+                  <Button type="button" variant="ghost">
                     <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
                   </Button>
-                  <Button variant="ghost" type="button">
+                  <Button type="button" variant="ghost">
                     <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
                   </Button>
-                  <Button variant="ghost" type="button">
+                  <Button type="button" variant="ghost">
                     <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
                   </Button>
-                  <Button variant="ghost" type="button">
+                  <Button type="button" variant="ghost">
                     <ListOrdered
                       className="h-4 w-4 text-zinc-500"
                       strokeWidth={3}
@@ -167,6 +167,7 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
+
               <Textarea
                 id="bio"
                 defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development."
@@ -195,7 +196,9 @@ export default function Home() {
             <Button variant="outline" type="button">
               Cancel
             </Button>
-            <Button type="submit">Save</Button>
+            <Button variant="primary" type="submit" form="settings">
+              Save
+            </Button>
           </div>
         </form>
       </div>
